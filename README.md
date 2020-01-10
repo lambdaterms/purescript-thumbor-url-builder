@@ -9,10 +9,11 @@ There you can find pure monoidal builder which can be used as follows:
 
 ```purescript
   let
+    key = Key "yoursecretkey"
     server = Server "https://example.com"
     img = ImagePath "image.jpeg"
   in
-    B.build Nothing server img
+    B.build (Just key) server img
       $ B.format PNG
       <> B.smartCrop true
       <> B.resize 100 200
@@ -21,4 +22,4 @@ There you can find pure monoidal builder which can be used as follows:
 
 ## `Thumbor.Url.Effect`
 
-Low level effectful bindings. All mutate passed `Thumbor` object and nearly all result in `Effect Unit` so it is hard to chain and use them on purpose. Just use `Builder` :-P
+Low level effectful bindings. All mutate passed `Thumbor` object and nearly all result in `Effect Unit` so it is hard to chain and use them. It is done on purpose. Just use `Builder` :-P
