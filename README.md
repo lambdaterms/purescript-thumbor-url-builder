@@ -11,7 +11,7 @@ There you can find pure monoidal builder which can be used as follows:
   let
     key = Key "yoursecretkey"
     server = Server "https://example.com"
-    img = ImagePath "image.jpeg"
+    img = ImagePath "https://myapp.com/assets/img/image.jpeg"
   in
     B.build (Just key) server img
       $ B.format PNG
